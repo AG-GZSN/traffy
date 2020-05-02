@@ -23,8 +23,10 @@ class DnsmasqService():
 
         lease_file = "--dhcp-leasefile=" + config.DNSMASQ_LEASE_FILE
         dhcp_ranges = []
-        for subnet in config.IP_RANGES:
-            dhcp_ranges.append("--dhcp-range=" + subnet[0] + "," + subnet[2] + "," + subnet[3] + ",15m")
+
+        if not hasattr(config, "DNSMASQ_STATIC_HOSTS_FILE"):
+            for subnet in config.IP_RANGES:
+                dhcp_ranges.append("--dhcp-range=" + subnet[0] + "," + subnet[2] + "," + subnet[3] + ",15m")
         dhcp_options = []
         for gateway in config.IP_RANGES:
             dhcp_options.append("--dhcp-option=" + gateway[0] + ",3," + gateway[1])

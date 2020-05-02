@@ -15,7 +15,12 @@ class DnsmasqService():
         for interface in config.IP_RANGES:
             interfaces.append("--interface=" + interface[0])
         conf = "--conf-file=" + config.DNSMASQ_CONFIG_FILE
+
         hosts = "--dhcp-hostsfile=" + config.DNSMASQ_HOSTS_FILE
+
+        if hasattr(config, "DNSMASQ_STATIC_HOSTS_FILE"):
+            hosts = "--dhcp-hostsfile=" + config.DNSMASQ_STATIC_HOSTS_FILE
+
         lease_file = "--dhcp-leasefile=" + config.DNSMASQ_LEASE_FILE
         dhcp_ranges = []
         for subnet in config.IP_RANGES:

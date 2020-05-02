@@ -1,6 +1,7 @@
 DATABASE_URI = "mysql://traffy_user:traffy_user@192.168.100.150/traffy_server"
 DNSMASQ_CONFIG_FILE = "/home/traffy/dnsmasq/dnsmasq.conf"
 DNSMASQ_HOSTS_FILE = "/home/traffy/dnsmasq/dnsmasq-hosts.conf"
+DNSMASQ_STATIC_HOSTS_FILE = "/home/traffy/dnsmasq/dnsmasq-static-hosts.conf"
 DNSMASQ_LEASE_FILE = "/home/traffy/dnsmasq/dnsmasq.leases"
 WAN_INTERFACE = "enp7s0"
 BRIDGE_INGRESS_INTERFACE = "ifb0"

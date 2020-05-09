@@ -199,13 +199,13 @@ class Server():
         shaping_manager.shutdown_shaping()
 
         # Clear Firewall Rules
-        iptables_rules_manager.apply_block_rule(delete=True)
-        iptables_rules_manager.apply_redirect_rule(delete=True)
-        iptables_rules_manager.apply_dns_rule(delete=True)
-        self.firewall_relock_unregistered_devices()
-        iptables_rules_manager.attach_traffic_to_portal(delete=True)
-        iptables_rules_manager.create_portal_route(delete=True)
-        iptables_rules_manager.create_portal_box(delete=True)
+        # iptables_rules_manager.apply_block_rule(delete=True)
+        # iptables_rules_manager.apply_redirect_rule(delete=True)
+        # iptables_rules_manager.apply_dns_rule(delete=True)
+        # self.firewall_relock_unregistered_devices()
+        # iptables_rules_manager.attach_traffic_to_portal(delete=True)
+        # iptables_rules_manager.create_portal_route(delete=True)
+        # iptables_rules_manager.create_portal_box(delete=True)
 
         logging.info("Clearing accounting chains…")
         self.remove_accounting_chains()
@@ -221,13 +221,13 @@ class Server():
         shaping_manager.setup_shaping()
 
         # Apply Firewall Rules
-        iptables_rules_manager.create_portal_box(delete=False)
-        iptables_rules_manager.create_portal_route(delete=False)
-        iptables_rules_manager.attach_traffic_to_portal(delete=False)
-        iptables_rules_manager.apply_block_rule(delete=False)
-        iptables_rules_manager.apply_redirect_rule(delete=False)
-        iptables_rules_manager.apply_dns_rule(delete=False)
-        self.firewall_unlock_registered_devices()
+        # iptables_rules_manager.create_portal_box(delete=False)
+        # iptables_rules_manager.create_portal_route(delete=False)
+        # iptables_rules_manager.attach_traffic_to_portal(delete=False)
+        # iptables_rules_manager.apply_block_rule(delete=False)
+        # iptables_rules_manager.apply_redirect_rule(delete=False)
+        # iptables_rules_manager.apply_dns_rule(delete=False)
+        # self.firewall_unlock_registered_devices()
 
         # Start Accounting
         logging.info("Preparing accounting chains…")
